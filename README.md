@@ -1,4 +1,4 @@
-# वृक्ष गणना Sustaining India’s green legacy one leaf at at time
+# TREEDEX Sustaining India’s green legacy one leaf at at time
 
 ## Inspiration
 In light of the pressing global environmental challenges, our journey led us to investigate various underlying issues that demand our attention and resolution. Among these, one critical concern that has often been overlooked and remains a significant source of environmental hazards in India is the mismanagement of tree diversion and enumeration. The continued reliance on outdated and traditional methods in this context has further exacerbated the issue.
@@ -31,3 +31,4 @@ Using this advanced system, TreeDex offers precise and transparent tree enumerat
 [ML Model](https://colab.research.google.com/drive/1sdUSExkSrWWe_KgtsESMHTj9-UF5KsVO?usp=sharing)
 [Frontend](https://github.com/Soumya2411/HTMTREEEDEX/tree/main/Client)
 [Backend](https://github.com/Soumya2411/HTMTREEEDEX/tree/main/backend)
+[Android](https://github.com/ritz-17/treedex-htm4.0)
