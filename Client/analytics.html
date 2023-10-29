@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        function generateRandomArrays() {
+            const result = [];
+            const treecount = 50
+            const rangeDefinitions = [
+                [10, 20],
+                [20, 40],
+                [40, 100],
+                [100, 150]
+            ];
+
+            for (let index = 0; index < treecount; index++) {
+                ind = Math.floor(Math.random() * (4))
+                const valueRange = rangeDefinitions[ind];
+                const randomValue = Math.floor(Math.random() * (valueRange[1] - valueRange[0] + 1)) + valueRange[0];
+                result.push([index, randomValue]);
+            }
+
+            return result;
+        }
+        const arr=generateRandomArrays()
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawHpie)
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([['Tree No', 'Height']].concat(arr));
+
+            var options = {
+                title: 'Tree Vs Hieght comparison',
+                hAxis: { title: 'Tree', minValue: 0, maxValue: 75 },
+                vAxis: { title: 'Height', minValue: 10, maxValue: 150 },
+                legend: 'none'
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+            var chart2= 
+            chart.draw(data, options);
+        }
+        function drawHpie(){
+            var data = new google.visualization.DataTable();
+            let f=0,g=0,h=0,j=0;
+            arr.forEach((xy)=>{
+                if(0<xy[1]<20){
+                    f+=1;
+                }
+                if(20<=xy[1]<40){
+                    g+=1;
+                }
+                if(40<=xy[1]<100){
+                    h+=1;
+                }
+                if(100<xy[1]){
+                    j+=1;
+                }
+            })
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['5<H<20', f],
+          ['20<H<40',g],
+          ['40<H<100',h],
+          ['100<H', j],]);
+
+        // Set options for Sarah's pie chart.
+        var options = {title:'Tree Hieght Distribution'};
+
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+        }
+    function hehe() {
+        const butt = document.getElementById("ggfgf")
+        butt.style.display="none";
+        const count = document.getElementById("count")
+        count.innerHTML="Tree Count : 67"
+      }
+    </script>
+
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+    <nav class="navbar navbar-expand-lg fixed-top bg-secondary text-uppercase navbar-light" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top">Tree<span
+                    style="color: rgb(120, 242, 147);">Dex</span></a><button data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive"
+                class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
+                    class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive"></div>
+        </div>
+    </nav>
+    <header class="text-center text-white bg-primary masthead">
+        <div class="container">
+            <h1>TreeDex</h1>
+            <hr class="star-light">
+            <p class="fs-1"> Analytics</p>
+        </div>
+    </header>
+    <div class="container d-flex mt-3">
+        <h1 id="count">Tree Count : </h1>
+          <button type="button" name="" id="ggfgf" class="btn btn-primary ms-4" onclick="hehe()">Refresh Tree Count</button>
+    </div>
+    <div class="container d-flex justify-content-center mt-5">
+
+        <img src="analytics.jpg" class="img-fluid w-75" alt="image desc">
+    </div>
+  
+    
+    <div class="d-flex justify-content-center align-content-center w-100">
+        <div id="chart_div" style="width: 60%; height: 600px;"></div>
+        <div id="piechart_3d" style="width: 40%; height: 600px;"></div>
+    </div>
+    
+    <footer class="text-center footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">By Team MYSTICS</h4>
+                    <p>Aditya Agarwal<br>Soumya Gupta<br>Ritiesh Bhatia<br>Himanshu Bansal</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase">Tree<span style="color: rgb(120, 242, 147);">DEX</span></h4>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="text-uppercase mb-4">A All rounder product</h4>
+                    <p class="lead mb-0"><span>FOR&nbsp; ENVIRONMENT<br>FOR GOVERNMENT<br>FOR INDUSTRY</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
